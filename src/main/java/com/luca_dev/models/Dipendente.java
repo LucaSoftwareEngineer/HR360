@@ -19,6 +19,13 @@ public class Dipendente {
     String username;
     String password;
 
+    public Dipendente(String nome, String cognome, String username, String password) {
+        this.nome = nome;
+        this. cognome = cognome;
+        this.username = username;
+        this.password = password;
+    }
+
     public Long getId() {
         return this.id;
     }
