@@ -1,5 +1,7 @@
 package com.luca_dev.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,6 +30,14 @@ public class DipendenteController {
     ) {
         Dipendente dipendente = new Dipendente(nome, cognome, username, password);
         return dipendenteRepositoryInstance.save(dipendente);
+    }
+    
+    @GetMapping("/dipendente/cerca")
+    public List<Object> cercaDipendente(
+        @RequestParam("nome") String nome,
+        @RequestParam("cognome") String cognome
+    ) {
+        return dipendenteRepositoryInstance.cercaDipendente(nome, cognome);
     }
     
     
