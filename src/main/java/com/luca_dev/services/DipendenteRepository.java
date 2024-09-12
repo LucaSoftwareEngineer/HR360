@@ -16,4 +16,13 @@ public interface DipendenteRepository extends JpaRepository<Dipendente, Long> {
         @RequestParam String nome,
         @RequestParam String cognome
     );
+
+    @Query(
+        " SELECT D.id FROM Dipendente as D " +
+        " WHERE D.username = :username AND D.password = :password "
+    )
+    Long loginDipendente(
+        @RequestParam String username,
+        @RequestParam String password
+    );
 }

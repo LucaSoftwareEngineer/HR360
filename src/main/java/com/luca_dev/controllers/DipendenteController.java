@@ -3,7 +3,6 @@ package com.luca_dev.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.luca_dev.models.Dipendente;
@@ -11,7 +10,6 @@ import com.luca_dev.services.DipendenteRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 
 
 
@@ -38,6 +36,18 @@ public class DipendenteController {
         @RequestParam("cognome") String cognome
     ) {
         return dipendenteRepositoryInstance.cercaDipendente(nome, cognome);
+    }
+
+    @GetMapping("/dipendente/login")
+    public Long loginDipendente(
+        @RequestParam("username") String username,
+        @RequestParam("password") String password
+    ) {
+        Long id = dipendenteRepositoryInstance.loginDipendente(username, password);
+        if (id == null) {
+            id = 0L;
+        }
+        return id;
     }
     
     
