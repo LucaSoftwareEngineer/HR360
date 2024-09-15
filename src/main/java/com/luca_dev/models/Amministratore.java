@@ -19,6 +19,13 @@ public class Amministratore {
     String username;
     String password;
 
+    public Amministratore(String nome, String cognome, String username, String password) {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.username = username;
+        this.password = password;
+    }
+
     public Long getId() {
         return this.id;
     }
@@ -37,6 +44,14 @@ public class Amministratore {
 
     public String getCognome() {
         return this.cognome;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getUsername() {
+        return this.username;
     }
 
     public void setPassword(String password) {
