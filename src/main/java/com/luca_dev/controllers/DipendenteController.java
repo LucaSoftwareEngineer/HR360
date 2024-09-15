@@ -3,7 +3,6 @@ package com.luca_dev.controllers;
 import java.util.List;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 import org.springframework.beans.factory.annotation.Autowired;
