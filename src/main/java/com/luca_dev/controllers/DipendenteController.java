@@ -38,9 +38,7 @@ public class DipendenteController {
         @RequestParam("username") String username,
         @RequestParam("password") String password
     ) {
-        if (id>0) {
-            dipendenteRepositoryInstance.modificaDipendente(id, nome, cognome, username, password);
-        }
+        dipendenteRepositoryInstance.modificaDipendente(id, nome, cognome, username, password);
         return "OK";
     }
     
