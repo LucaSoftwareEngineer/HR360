@@ -18,12 +18,14 @@ public class Dipendente {
     String cognome;
     String username;
     String password;
+    String foto_nome;
 
-    public Dipendente(String nome, String cognome, String username, String password) {
+    public Dipendente(String nome, String cognome, String username, String password, String foto_nome) {
         this.nome = nome;
         this. cognome = cognome;
         this.username = username;
         this.password = password;
+        this.foto_nome = foto_nome;
     }
 
     public Long getId() {
