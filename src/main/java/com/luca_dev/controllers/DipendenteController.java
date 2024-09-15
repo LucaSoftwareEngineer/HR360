@@ -10,7 +10,7 @@ import com.luca_dev.services.DipendenteRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.PutMapping;
 
 
 @RestController
@@ -29,6 +29,21 @@ public class DipendenteController {
         Dipendente dipendente = new Dipendente(nome, cognome, username, password);
         return dipendenteRepositoryInstance.save(dipendente);
     }
+
+    @PutMapping("/dipendente/modifica")
+    public Object modificaDipendente(
+        @RequestParam("id") Long id,
+        @RequestParam("nome") String nome,
+        @RequestParam("cognome") String cognome,
+        @RequestParam("username") String username,
+        @RequestParam("password") String password
+    ) {
+        if (id>0) {
+            dipendenteRepositoryInstance.modificaDipendente(id, nome, cognome, username, password);
+        }
+        return "OK";
+    }
+    
     
     @GetMapping("/dipendente/cerca")
     public List<Object> cercaDipendente(
