@@ -13,14 +13,15 @@ import com.luca_dev.models.Dipendente;
 import com.luca_dev.services.DipendenteRepository;
 import com.luca_dev.services.Percorsi;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
-
 @RestController
+@CrossOrigin(origins = "*")
 public class DipendenteController {
 
     @Autowired
